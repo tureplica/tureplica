@@ -1,0 +1,174 @@
+<!-- ... lo demás igual ... -->
+
+<form id="formPedido" action="https://formspree.io/f/mdkdwbrg" method="POST">
+
+  <label for="nombre">Nombre completo:</label>
+  <input type="text" id="nombre" name="nombre" required />
+
+  <label for="email">Correo electrónico:</label>
+  <input type="email" id="email" name="email" required />
+
+  <label for="producto">Producto:</label>
+  <input type="text" id="producto" name="producto" readonly />
+
+  <label for="mensaje">Mensaje adicional:</label>
+  <textarea id="mensaje" name="mensaje" rows="3"></textarea>
+
+  <button type="submit">Enviar pedido</button>
+  <button type="button" id="cerrar-popup">Cancelar</button>
+</form>
+
+<!-- ... el resto igual ... -->
+body {
+  font-family: Arial, sans-serif;
+  margin: 0; padding: 0;
+  background: #f9f9f9;
+  color: #222;
+}
+
+header {
+  background: #222;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+.aviso-legal {
+  margin-top: 0.5em;
+  font-size: 0.9em;
+  color: #f44336;
+}
+
+main {
+  max-width: 960px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+.productos {
+  display: flex;
+  gap: 1em;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.producto {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  width: 280px;
+  padding: 1em;
+  text-align: center;
+}
+
+.producto img {
+  max-width: 100%;
+  border-radius: 5px;
+  margin-bottom: 0.5em;
+}
+
+.precio {
+  font-weight: bold;
+  margin: 0.5em 0;
+  font-size: 1.2em;
+  color: #388e3c;
+}
+
+.btn-comprar {
+  background: #388e3c;
+  color: white;
+  border: none;
+  padding: 0.6em 1.2em;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.btn-comprar:hover {
+  background: #2e7d32;
+}
+
+.popup-form {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.oculto {
+  display: none;
+}
+
+.popup-contenido {
+  background: white;
+  padding: 1.5em;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.25);
+}
+
+.popup-contenido h2 {
+  margin-top: 0;
+}
+
+.popup-contenido label {
+  display: block;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.popup-contenido input,
+.popup-contenido textarea {
+  width: 100%;
+  padding: 0.5em;
+  margin-top: 0.3em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.popup-contenido button[type="submit"] {
+  margin-top: 1em;
+  background: #388e3c;
+  color: white;
+  border: none;
+  padding: 0.7em;
+  width: 100%;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-contenido button[type="submit"]:hover {
+  background: #2e7d32;
+}
+
+.popup-contenido button[type="button"] {
+  margin-top: 0.5em;
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 0.6em;
+  width: 100%;
+  font-size: 1em;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.popup-contenido button[type="button"]:hover {
+  background: #d32f2f;
+}
+
+@media (max-width: 600px) {
+  .productos {
+    flex-direction: column;
+    align-items: center;
+  }
+  .producto {
+    width: 90%;
+  }
+}
+
